@@ -13,32 +13,48 @@
     <div class="row">
       <section>
         <div class="row">
-          <div class="col-md-12"  id="searchForm">
+          <div class="col-md-12 searchFormBotomMargin">
             <form class="form-inline" >
               <div class="form-group">
                 <label for="searchInput">Search</label>
-                <input type="input" class="form-control" id="searchInput" placeholder="Search by item name">
+                <input type="input" class="form-control" id="searchInput" data-ng-model="searchItemField" placeholder="Search by item name">
               </div>
             </form>
           </div>
           <div class="row">
-              <div class="col-md-12">
-                <form class="form-inline">
+              <div class="col-md-12 searchFormBotomMargin">
+                <form class="form-inline" ng-submit="formItemSubmit()">
                     <div class="form-group">
                       <label for="addItemInput">Add Item</label>
-                        <input type="input" s class="form-control" id="addItemInput" placeholder="">
+                        <input type="input" s class="form-control" id="addItemInput" placeholder="Item Name" required="Please Add Product Name" data-ng-model='productName'>
                     </div>
                     <div class="form-group">
-                      <input type="input"  class="form-control" id="itemCopy" placeholder="">
+                      <input type="input"  class="form-control" id="itemCopy" placeholder="Item Description" required="Please Add Description" data-ng-model='productDescription'>
                     </div>
                     <div class="form-group">
-                      <input type="input"  class="form-control"  id="itemPrice" placeholder="">
+                      <input type="input"  class="form-control"  id="itemPrice" placeholder="Item Price" required="Please Add Price" data-ng-model='productPrice'>
                     </div>
                     <button type="submit" class="btn btn-default">Add</button>
                 </form>
               </div>
           </div>
+          <div class="col-md-12">
+            <ul class="list-inline" id="resultList">
+              <li data-ng-repeat="product in products |  filter: {name: searchField}" ng-if="product.name.split(' ')[0].toLowerCase() === searchItemField.toLowerCase()">
+                <h2 id="productName">{{product.name}}
+                  <span><button type="button" class="btn btn-primary">{{product.price | currency:"$"}}</button>
+                    <button type="button" class="btn btn-default" aria-label="Remove Item Button">
+                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                  </button>
+                  </span>
+                </h2>
+                <p id="productDescription">{{product.description}}</p>
+                <p class="hide" id="productID">{{product.id}}
+                </p>
+              </li>
+            </ul>
+          </div>
       </section>
     </div>
-    </div>
+ </div>
 </div>

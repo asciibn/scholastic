@@ -3,11 +3,34 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-#searchForm{
-  margin-bottom: 20px;
+.searchFormBotomMargin{
+  margin-bottom: 30px;
 }
 
- 
+#resultList{
+  list-style: none;
+  width: auto;
+}
+
+#resultList li{
+   background-color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px 10px 10px 10px;
+
+}
+
+#productName button:nth-of-type(1){
+  margin-left: 40%;
+}
+
+#productName button:nth-of-type(2){
+  margin-left: 10%;
+  border: none;
+  background: none;
+}
+
+
 
 .browsehappy {
   margin: 0.2em 0;
