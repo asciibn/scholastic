@@ -28,5 +28,16 @@ angular.module('scholasticApp')
         $scope.productPrice = '';
     };
 
+    $scope.removeItem = function(e){
+      //console.log(e.product);
+      for(var i = 0; i < $scope.products.length; i++){
+        if(e.product.id === $scope.products[i].id){
+          //console.log($scope.products[i].id);
+          $scope.products.splice(i, 1);
+        }
+      }
+      //console.log($scope.products);
+    };
+
   loadData();
   });

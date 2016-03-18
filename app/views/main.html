@@ -23,7 +23,7 @@
           </div>
           <div class="row">
               <div class="col-md-12 searchFormBotomMargin">
-                <form class="form-inline" ng-submit="formItemSubmit()">
+                <form class="form-inline" data-ng-submit="formItemSubmit()">
                     <div class="form-group">
                       <label for="addItemInput">Add Item</label>
                         <input type="input" s class="form-control" id="addItemInput" placeholder="Item Name" required="Please Add Product Name" data-ng-model='productName'>
@@ -40,10 +40,10 @@
           </div>
           <div class="col-md-12">
             <ul class="list-inline" id="resultList">
-              <li data-ng-repeat="product in products |  filter: {name: searchField}" ng-if="product.name.split(' ')[0].toLowerCase() === searchItemField.toLowerCase()">
+              <li data-ng-repeat="product in products |  filter: {name: searchField}" data-ng-if="product.name.split(' ')[0].toLowerCase() === searchItemField.toLowerCase()">
                 <h2 id="productName">{{product.name}}
                   <span><button type="button" class="btn btn-primary">{{product.price | currency:"$"}}</button>
-                    <button type="button" class="btn btn-default" aria-label="Remove Item Button">
+                    <button type="button" class="btn btn-default" aria-label="Remove Item Button" data-ng-click="removeItem(this)">
                     <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                   </button>
                   </span>
