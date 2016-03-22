@@ -3,6 +3,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+#mainContent{
+  margin-top: 5%;
+}
 .searchFormBotomMargin{
   margin-bottom: 30px;
 }
@@ -17,6 +20,24 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     width: 100%;
     padding: 20px;
     border-radius: 10px 10px 10px 10px;
+
+}
+
+
+@media (max-width: 768px) {
+  #leftNav{
+    display: none;
+  }
+
+  #rightNav{
+    padding-top: 60px;
+    padding-left: 40px;
+  }
+
+  #mainContent{
+    margin-top: 8%;
+  }
+
 
 }
 
